@@ -1,9 +1,6 @@
 Overview
 --------
-This is a collection (okay, currently one) of scripts that can be used to
-filter non-text/plain messages in mutt so they're readable in the internal
-pager (in a simple text/plain representation)
-
+This is a fork simply adapted to work with ics files coming from Zimbra
 Dependancies
 ------------
 Perl modules
@@ -30,7 +27,3 @@ like ...
 text/calendar; /path/to/vcalendar-filter; copiousoutput
 
 Any problems/bugs/improvements or feedback of any type is welcome.
-
-martyn@dollyfish.net.nz
-
-http://dollyfish.net.nz/projects/mutt-filters

@@ -47,7 +47,7 @@ foreach my $entry ( @{$calendar->{entries}} ) {
     foreach my $property ( keys %{$entry->properties} ) {
         next unless defined $entry->property($property);
         $properties->{$property} = join(', ', map { $_->decoded_value } @{$entry->property($property)});
-        if ( $property eq 'description' ) {
+        if ( $property eq 'DESCRIPTION' ) {
             $properties->{$property} = eval qq{"$properties->{$property}"};
 
             $properties->{$property} = autoformat $properties->{$property}, {
@@ -71,7 +71,7 @@ foreach my $entry ( @{$calendar->{entries}} ) {
     }
     elsif ( $entry->ical_entry_type eq 'VEVENT' ) {
         print '-' x 72, "\n";
-        foreach my $key ( qw(summary BR description BR location organizer dtstart dtend) ) {
+        foreach my $key ( qw(summary BR description BR organizer dtstart dtend) ) {
             if ( $key eq 'BR' ) {
                 print "\n";
                 next;
